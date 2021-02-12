@@ -1,8 +1,20 @@
+## Module Overview
+
+Terraform module for creating networking resources on Google Cloud Platform (GCP).
+
+It deploys the following resources into a given GCP project:
+
+- Instance Template
+- Managed Instance Group
+- Service Account (optional)
+- Service Account permissions
+
+
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >=0.14.2,<0.15 |
+| terraform | >=0.13.4,<0.15 |
 | google | <4.0,>= 2.12 |
 
 ## Providers
@@ -18,10 +30,10 @@ No provider.
 | network\_self\_link | Network self link | `string` | n/a | yes |
 | node\_count | Number of instances to deploy | `string` | `"1"` | no |
 | preemptive | Create preemptive forward proxy instance | `bool` | `false` | no |
-| project\_id | Project id | `string` | n/a | yes |
+| project\_id | project id | `string` | n/a | yes |
 | region | Region | `string` | n/a | yes |
 | service\_account\_name | Name of service account attached to forward proxy instance | `string` | `""` | no |
-| subnet\_name | Subnet name | `string` | n/a | yes |
+| subnets\_name | Subnet name | `string` | n/a | yes |
 | template\_name | Name of template used by mig | `string` | `"forward-proxy-template"` | no |
 
 ## Outputs

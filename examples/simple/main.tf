@@ -12,23 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "google_compute_network" "network" {
-  name    = var.network_name
-  project = var.project_id
-}
-
-resource "google_compute_subnetwork" "subnet" {
-  name          = var.subnet_name
-  ip_cidr_range = var.ip_cidr_range
-  region        = var.region
-  network       = google_compute_network.network.id
-  project       = var.project_id
-}
-
-module "forward-proxy" {
+module "forwardproxy" {
   source = "../.."
 
-  subnet_name       = google_compute_subnetwork.subnet.name
+  subnets_name      = google_compute_subnetwork.subnet.name
   network_self_link = google_compute_network.network.self_link
   region            = var.region
   project_id        = var.project_id

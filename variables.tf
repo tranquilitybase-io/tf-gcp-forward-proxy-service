@@ -13,11 +13,11 @@
 # limitations under the License.
 
 variable "project_id" {
-  description = "Project id"
+  description = "project id"
   type        = string
 }
 
-variable "subnet_name" {
+variable "subnets_name" {
   description = "Subnet name"
   type        = string
 }
