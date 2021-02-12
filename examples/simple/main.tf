@@ -13,7 +13,7 @@
 # limitations under the License.
 
 resource "google_compute_network" "network" {
-  name = "example-network"
+  name    = "example-network"
   project = var.project_id
 }
 
@@ -25,10 +25,10 @@ resource "google_compute_subnetwork" "subnet" {
   project       = var.project_id
 }
 
-module "forward_proxy" {
+module "forward-proxy" {
   source = "../.."
 
-  subnet_name      = google_compute_subnetwork.subnet.name
+  subnet_name       = google_compute_subnetwork.subnet.name
   network_self_link = google_compute_network.network.self_link
   region            = var.region
   project_id        = var.project_id

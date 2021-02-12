@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-module "instance_template" {
-  source = "terraform-google-modules/vm/google//modules/instance_template"
+module "instance-template" {
+  source  = "terraform-google-modules/vm/google//modules/instance_template"
   version = "6.0.0"
 
   name_prefix        = var.template_name
@@ -32,7 +32,7 @@ module "instance_template" {
 }
 
 module "mig" {
-  source = "terraform-google-modules/vm/google//modules/mig"
+  source  = "terraform-google-modules/vm/google//modules/mig"
   version = "6.0.0"
 
   project_id        = var.project_id
