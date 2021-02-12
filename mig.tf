@@ -23,7 +23,6 @@ module "instance-template" {
   subnetwork_project = var.project_id
   service_account    = local.service_account_object
   tags               = ["iap"]
-
   preemptible    = var.preemptive
   startup_script = file("${path.module}/files/metadata-startup.sh")
   region         = var.region
