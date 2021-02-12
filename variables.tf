@@ -17,7 +17,7 @@ variable "project_id" {
   type        = string
 }
 
-variable "subnets_name" {
+variable "subnet_name" {
   description = "Subnet name"
   type        = string
 }
