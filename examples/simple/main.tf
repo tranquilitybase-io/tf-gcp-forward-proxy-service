@@ -25,7 +25,7 @@ resource "google_compute_subnetwork" "subnet" {
   project       = var.project_id
 }
 
-module "forwardproxy" {
+module "forward_proxy" {
   source = "../.."
 
   subnet_name      = google_compute_subnetwork.subnet.name
