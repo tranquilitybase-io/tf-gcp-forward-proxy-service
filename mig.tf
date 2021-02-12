@@ -37,11 +37,10 @@ module "mig" {
 
   project_id        = var.project_id
   hostname          = var.mig_hostname
-  instance_template = module.instance_template.self_link
+  instance_template = module.instance-template.self_link
   subnetwork        = var.subnet_name
   region            = var.region
   network           = var.network_self_link
   target_size       = var.node_count
   health_check      = var.health_check
-
 }

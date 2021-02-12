@@ -18,7 +18,7 @@ No provider.
 | network\_self\_link | Network self link | `string` | n/a | yes |
 | node\_count | Number of instances to deploy | `string` | `"1"` | no |
 | preemptive | Create preemptive forward proxy instance | `bool` | `false` | no |
-| project\_id | project id | `string` | n/a | yes |
+| project\_id | Project id | `string` | n/a | yes |
 | region | Region | `string` | n/a | yes |
 | service\_account\_name | Name of service account attached to forward proxy instance | `string` | `""` | no |
 | subnet\_name | Subnet name | `string` | n/a | yes |
