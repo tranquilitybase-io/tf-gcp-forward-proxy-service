@@ -18,3 +18,15 @@ variable "region" {
 
 variable "project_id" {
 }
+
+variable "ip_cidr_range" {
+  default = "10.2.0.0/16"
+}
+
+variable "subnet_name" {
+  default = "example-subnetwork"
+}
+
+variable "network_name" {
+  default = "example-network"
+}
