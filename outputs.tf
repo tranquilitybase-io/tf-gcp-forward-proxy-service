@@ -24,10 +24,10 @@ output "mig_instance_group_url" {
 
 output "instance_template_self_link" {
   description = "Self link for instance template"
-  value       = module.instance_template.self_link
+  value       = module.instance-template.self_link
 }
 
 output "instance_tempalte_name" {
   description = "Instance template name"
-  value       = module.instance_template.name
+  value       = module.instance-template.name
 }
