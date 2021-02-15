@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-module "instance_template" {
+module "instance-template" {
   source = "terraform-google-modules/vm/google//modules/instance_template"
   version = "6.0.0"
 
   name_prefix        = var.template_name
   project_id         = var.project_id
   network            = var.network_self_link
-  subnetwork         = var.subnets_name
+  subnetwork         = var.subnet_name
   subnetwork_project = var.project_id
   service_account    = local.service_account_object
   tags               = ["iap"]
@@ -37,8 +37,8 @@ module "mig" {
 
   project_id        = var.project_id
   hostname          = var.mig_hostname
-  instance_template = module.instance_template.self_link
-  subnetwork        = var.subnets_name
+  instance_template = module.instance-template.self_link
+  subnetwork        = var.subnet_name
   region            = var.region
   network           = var.network_self_link
   target_size       = var.node_count
