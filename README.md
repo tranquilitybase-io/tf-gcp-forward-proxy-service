@@ -9,7 +9,6 @@ It deploys the following resources into a given GCP project:
 - Service Account (optional)
 - Service Account permissions
 
-
 ## Requirements
 
 | Name | Version |
