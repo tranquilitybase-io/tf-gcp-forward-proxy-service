@@ -12,56 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-variable "project_id" {
-  description = "Project id"
-  type        = string
-}
-
-variable "subnet_name" {
-  description = "Subnet name"
-  type        = string
-}
-
-variable "network_self_link" {
-  description = "Network self link"
-  type        = string
-}
-
-variable "region" {
-  description = "Region"
-  type        = string
-}
-
-variable "preemptive" {
-  description = "Create preemptive forward proxy instance"
-  type        = bool
-  default     = false
-}
-
-variable "template_name" {
-  description = "Name of template used by mig"
-  type        = string
-  default     = "forward-proxy-template"
-}
-
-variable "mig_hostname" {
-  description = "Hostname of mig"
-  type        = string
-  default     = "forward-proxy-mig"
-}
-
-variable "service_account_name" {
-  description = "Name of service account attached to forward proxy instance"
-  type        = string
-  default     = ""
-}
-
-variable "node_count" {
-  description = "Number of instances to deploy"
-  type        = string
-  default     = "1"
-}
-
 variable "health_check" {
   description = "Health check for mig"
   type = object({
@@ -93,3 +43,55 @@ variable "health_check" {
     "unhealthy_threshold" : 5
   }
 }
+
+variable "mig_hostname" {
+  description = "Hostname of mig"
+  type        = string
+  default     = "forward-proxy"
+}
+
+variable "network_name" {
+  description = "Network self link"
+  type        = string
+  default     = ""
+}
+
+variable "node_count" {
+  description = "Number of instances to deploy"
+  type        = string
+  default     = "1"
+}
+
+variable "preemptible" {
+  description = "Create preemptive forward proxy instance"
+  type        = bool
+  default     = false
+}
+
+variable "project_id" {
+  description = "Project id"
+  type        = string
+}
+
+variable "region" {
+  description = "Region"
+  type        = string
+}
+
+variable "service_account_name" {
+  description = "Name of service account attached to forward proxy instance"
+  type        = string
+  default     = ""
+}
+
+variable "subnet_name" {
+  description = "Subnet name"
+  type        = string
+}
+
+variable "template_name" {
+  description = "Name of template used by mig"
+  type        = string
+  default     = "forward-proxy"
+}
+
