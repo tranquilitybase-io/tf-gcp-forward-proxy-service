@@ -1,3 +1,21 @@
+## Module Overview
+
+Terraform module for creating networking resources on Google Cloud Platform (GCP).
+
+It deploys the following resources into a given GCP project:
+
+- Instance Template
+- Managed Instance Group
+- Service Account (optional)
+- Service Account permissions
+
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >=0.14.2,<0.15 |
+| google | <4.0,>= 2.12 |
+
 ## Requirements
 
 | Name | Version |
@@ -28,7 +46,7 @@ No provider.
 
 | Name | Description |
 |------|-------------|
-| instance\_tempalte\_name | Instance template name |
+| instance\_template\_name | Instance template name |
 | instance\_template\_self\_link | Self link for instance template |
 | mig\_instance\_group\_url | Url for mig instance group |
 | mig\_self\_link | Self link for mig |
