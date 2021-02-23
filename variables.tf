@@ -53,6 +53,7 @@ variable "mig_hostname" {
 variable "network_name" {
   description = "Network self link"
   type        = string
+  default     = ""
 }
 
 variable "node_count" {
