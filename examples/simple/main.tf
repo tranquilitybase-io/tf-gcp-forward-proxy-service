@@ -15,7 +15,7 @@
 module "forwardproxy" {
   source = "../.."
 
-  subnets_name      = google_compute_subnetwork.subnet.name
+  subnet_name      = google_compute_subnetwork.subnet.name
   network_self_link = google_compute_network.network.self_link
   region            = var.region
   project_id        = var.project_id
