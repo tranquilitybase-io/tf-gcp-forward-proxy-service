@@ -13,7 +13,7 @@ It deploys the following resources into a given GCP project:
 
 | Name | Version |
 |------|---------|
-| terraform | >=0.13.4,<0.15 |
+| terraform | >=0.14.2,<0.15 |
 | google | <4.0,>= 2.12 |
 
 ## Requirements
