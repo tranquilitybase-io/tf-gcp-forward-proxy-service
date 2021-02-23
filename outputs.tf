@@ -12,16 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "mig_self_link" {
-  description = "Self link for mig"
-  value       = module.mig.self_link
-}
-
-output "mig_instance_group_url" {
-  description = "Url for mig instance group"
-  value       = module.mig.instance_group
-}
-
 output "instance_template_self_link" {
   description = "Self link for instance template"
   value       = module.instance-template.self_link
@@ -30,4 +20,14 @@ output "instance_template_self_link" {
 output "instance_template_name" {
   description = "Instance template name"
   value       = module.instance-template.name
+}
+
+output "mig_self_link" {
+  description = "Self link for mig"
+  value       = module.mig.self_link
+}
+
+output "mig_instance_group_url" {
+  description = "Url for mig instance group"
+  value       = module.mig.instance_group
 }

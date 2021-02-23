@@ -13,33 +13,34 @@
 # limitations under the License.
 
 module "instance-template" {
-  source = "terraform-google-modules/vm/google//modules/instance_template"
+  source  = "terraform-google-modules/vm/google//modules/instance_template"
   version = "6.0.0"
 
   name_prefix        = var.template_name
+  network            = var.network_name
+  preemptible        = var.preemptible
   project_id         = var.project_id
-  network            = var.network_self_link
+  region             = var.region
   subnetwork         = var.subnet_name
   subnetwork_project = var.project_id
   service_account    = local.service_account_object
+  startup_script     = file("${path.module}/files/metadata-startup.sh")
   tags               = ["iap"]
-  preemptible    = var.preemptive
-  startup_script = file("${path.module}/files/metadata-startup.sh")
-  region         = var.region
 
   depends_on = [module.service-account]
 }
 
 module "mig" {
-  source = "terraform-google-modules/vm/google//modules/mig"
+  source  = "terraform-google-modules/vm/google//modules/mig"
   version = "6.0.0"
 
-  project_id        = var.project_id
+  health_check      = var.health_check
   hostname          = var.mig_hostname
   instance_template = module.instance-template.self_link
-  subnetwork        = var.subnet_name
+  network           = var.network_name
+  project_id        = var.project_id
   region            = var.region
-  network           = var.network_self_link
+  subnetwork        = var.subnet_name
   target_size       = var.node_count
-  health_check      = var.health_check
+
 }
