@@ -16,6 +16,13 @@ It deploys the following resources into a given GCP project:
 | terraform | >=0.13.4,<0.15 |
 | google | <4.0,>= 2.12 |
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >=0.14.2,<0.15 |
+| google | <4.0,>= 2.12 |
+
 ## Providers
 
 No provider.
@@ -29,17 +36,17 @@ No provider.
 | network\_self\_link | Network self link | `string` | n/a | yes |
 | node\_count | Number of instances to deploy | `string` | `"1"` | no |
 | preemptive | Create preemptive forward proxy instance | `bool` | `false` | no |
-| project\_id | project id | `string` | n/a | yes |
+| project\_id | Project id | `string` | n/a | yes |
 | region | Region | `string` | n/a | yes |
 | service\_account\_name | Name of service account attached to forward proxy instance | `string` | `""` | no |
-| subnets\_name | Subnet name | `string` | n/a | yes |
+| subnet\_name | Subnet name | `string` | n/a | yes |
 | template\_name | Name of template used by mig | `string` | `"forward-proxy-template"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| instance\_tempalte\_name | Instance template name |
+| instance\_template\_name | Instance template name |
 | instance\_template\_self\_link | Self link for instance template |
 | mig\_instance\_group\_url | Url for mig instance group |
 | mig\_self\_link | Self link for mig |

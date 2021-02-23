@@ -27,7 +27,7 @@ output "instance_template_self_link" {
   value       = module.instance-template.self_link
 }
 
-output "instance_tempalte_name" {
+output "instance_template_name" {
   description = "Instance template name"
   value       = module.instance-template.name
 }

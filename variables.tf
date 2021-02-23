@@ -13,7 +13,7 @@
 # limitations under the License.
 
 variable "project_id" {
-  description = "project id"
+  description = "Project id"
   type        = string
 }
 
