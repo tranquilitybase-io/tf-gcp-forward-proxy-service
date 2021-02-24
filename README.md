@@ -1,3 +1,14 @@
+## Module Overview
+
+Terraform module for creating a forward proxy on the Google Cloud Platform (GCP).
+
+It deploys the following resources into a given GCP project:
+
+- Instance Template
+- Managed Instance Group
+- Service Account (optional)
+- Service Account permissions
+
 ## Requirements
 
 | Name | Version |
