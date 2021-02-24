@@ -28,7 +28,7 @@ module "instance-template" {
   subnetwork_project   = var.project_id
   service_account      = local.service_account_object
   startup_script       = file("${path.module}/files/metadata-startup.sh")
-  tags                 = ["iap"]
+  tags                 = var.target_tags
 
   depends_on = [module.service-account]
 }

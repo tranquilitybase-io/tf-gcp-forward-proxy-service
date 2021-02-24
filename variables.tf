@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+variable "target_tags" {
+  description = "Target tags"
+  type        = list
+  default     = []
+}
+
 variable "health_check" {
   description = "Health check for mig"
   type = object({
@@ -93,7 +99,7 @@ variable "service_account_name" {
 variable "source_image_family" {
   description = "Source image family for template"
   type        = string
-  default     = "debian-9"
+  default     = "debian-10"
 }
 
 variable "source_image_project" {

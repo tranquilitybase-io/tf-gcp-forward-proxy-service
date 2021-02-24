@@ -19,4 +19,6 @@ module "forwardproxy" {
   network_name = google_compute_network.network.name
   region       = var.region
   project_id   = var.project_id
+  target_tags  = ["allow-iap-ssh"]
 }
+
