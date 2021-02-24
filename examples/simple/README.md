@@ -1,5 +1,3 @@
-# simple example
-
 ## Instructions
 Execute the following in a terminal:
 ```bash
@@ -18,3 +16,30 @@ In a new terminal execute the following to test connectivity:
 ```bash
 curl --proxy localhost:3128 http://whatismyip.akamai.com/
 ```
+
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >=0.14.2,<0.15 |
+| google | <4.0,>= 2.12 |
+
+## Providers
+
+No provider.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| project\_id | n/a | `any` | n/a | yes |
+| region | n/a | `string` | `"europe-west1"` | no |
+
+## Outputs
+
+No output.
+
+
+
+
+
