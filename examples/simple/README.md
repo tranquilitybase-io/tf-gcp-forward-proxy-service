@@ -17,17 +17,6 @@ In a new terminal execute the following to test connectivity:
 curl --proxy localhost:3128 http://whatismyip.akamai.com/
 ```
 
-## Requirements
-
-| Name | Version |
-|------|---------|
-| terraform | >=0.14.2,<0.15 |
-| google | <4.0,>= 2.12 |
-
-## Providers
-
-No provider.
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
