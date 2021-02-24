@@ -45,5 +45,4 @@ module "mig" {
   region            = var.region
   subnetwork        = var.subnet_name
   target_size       = var.node_count
-
 }

@@ -14,7 +14,7 @@
 
 variable "target_tags" {
   description = "Target tags"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
@@ -45,7 +45,7 @@ variable "health_check" {
     "request_path" : "/",
     "response" : "",
     "timeout_sec" : 10,
-    "type" : "",
+    "type" : "tcp",
     "unhealthy_threshold" : 5
   }
 }

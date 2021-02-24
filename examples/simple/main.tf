@@ -21,4 +21,3 @@ module "forwardproxy" {
   project_id   = var.project_id
   target_tags  = ["allow-iap-ssh"]
 }
-
