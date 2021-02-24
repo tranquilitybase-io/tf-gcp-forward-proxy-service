@@ -1,3 +1,5 @@
+# tf-gcp-forward-proxy-service
+
 ## Module Overview
 
 Terraform module for creating a forward proxy on the Google Cloud Platform (GCP).
@@ -21,7 +23,9 @@ Refer to the examples under [examples/](examples) directory.
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| google | <4.0,>= 2.12 |
 
 ## Inputs
 
