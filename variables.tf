@@ -50,6 +50,12 @@ variable "mig_hostname" {
   default     = "forward-proxy"
 }
 
+variable "machine_type" {
+  description = "Machine type for template"
+  type        = string
+  default     = "e2-small"
+}
+
 variable "network_name" {
   description = "Network self link"
   type        = string
@@ -82,6 +88,18 @@ variable "service_account_name" {
   description = "Name of service account attached to forward proxy instance"
   type        = string
   default     = ""
+}
+
+variable "source_image_family" {
+  description = "Source image family for template"
+  type        = string
+  default     = "debian-9"
+}
+
+variable "source_image_project" {
+  description = "Source image project"
+  type        = string
+  default     = "debian-cloud"
 }
 
 variable "subnet_name" {
