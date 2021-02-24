@@ -119,3 +119,8 @@ variable "template_name" {
   default     = "forward-proxy"
 }
 
+variable "disk_size_gb" {
+  description = "Boot disk size in GB"
+  type        = string
+  default     = "50"
+}
