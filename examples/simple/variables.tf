@@ -17,5 +17,4 @@ variable "region" {
 }
 
 variable "project_id" {
-  default = "managementplane-test-amcev36"
 }
