@@ -16,6 +16,9 @@ It deploys the following resources into a given GCP project:
 | terraform | >=0.14.2,<0.15 |
 | google | <4.0,>= 2.12 |
 
+## Usage
+Refer to the examples under [examples/](examples) directory.
+
 ## Providers
 
 No provider.
