@@ -16,16 +16,20 @@ module "instance-template" {
   source  = "terraform-google-modules/vm/google//modules/instance_template"
   version = "6.0.0"
 
-  name_prefix        = var.template_name
-  network            = var.network_name
-  preemptible        = var.preemptible
-  project_id         = var.project_id
-  region             = var.region
-  subnetwork         = var.subnet_name
-  subnetwork_project = var.project_id
-  service_account    = local.service_account_object
-  startup_script     = file("${path.module}/files/metadata-startup.sh")
-  tags               = ["iap"]
+  disk_size_gb         = var.disk_size_gb
+  machine_type         = var.machine_type
+  name_prefix          = var.template_name
+  network              = var.network_name
+  preemptible          = var.preemptible
+  project_id           = var.project_id
+  region               = var.region
+  service_account      = local.service_account_object
+  source_image_family  = var.source_image_family
+  source_image_project = var.source_image_project
+  startup_script       = file("${path.module}/files/metadata-startup.sh")
+  subnetwork           = var.subnet_name
+  subnetwork_project   = var.project_id
+  tags                 = var.target_tags
 
   depends_on = [module.service-account]
 }
@@ -42,5 +46,4 @@ module "mig" {
   region            = var.region
   subnetwork        = var.subnet_name
   target_size       = var.node_count
-
 }

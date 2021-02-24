@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+variable "target_tags" {
+  description = "Target tags"
+  type        = list(any)
+  default     = []
+}
+
 variable "health_check" {
   description = "Health check for mig"
   type = object({
@@ -39,7 +45,7 @@ variable "health_check" {
     "request_path" : "/",
     "response" : "",
     "timeout_sec" : 10,
-    "type" : "",
+    "type" : "tcp",
     "unhealthy_threshold" : 5
   }
 }
@@ -48,6 +54,12 @@ variable "mig_hostname" {
   description = "Hostname of mig"
   type        = string
   default     = "forward-proxy"
+}
+
+variable "machine_type" {
+  description = "Machine type for template"
+  type        = string
+  default     = "e2-small"
 }
 
 variable "network_name" {
@@ -84,6 +96,18 @@ variable "service_account_name" {
   default     = ""
 }
 
+variable "source_image_family" {
+  description = "Source image family for template"
+  type        = string
+  default     = "debian-10"
+}
+
+variable "source_image_project" {
+  description = "Source image project"
+  type        = string
+  default     = "debian-cloud"
+}
+
 variable "subnet_name" {
   description = "Subnet name"
   type        = string
@@ -95,3 +119,8 @@ variable "template_name" {
   default     = "forward-proxy"
 }
 
+variable "disk_size_gb" {
+  description = "Boot disk size in GB"
+  type        = string
+  default     = "50"
+}

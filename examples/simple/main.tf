@@ -15,8 +15,9 @@
 module "forwardproxy" {
   source = "../.."
 
-  subnet_name      = google_compute_subnetwork.subnet.name
-  network_self_link = google_compute_network.network.self_link
-  region            = var.region
-  project_id        = var.project_id
+  subnet_name  = google_compute_subnetwork.subnet.name
+  network_name = google_compute_network.network.name
+  region       = var.region
+  project_id   = var.project_id
+  target_tags  = ["allow-iap-ssh"]
 }
