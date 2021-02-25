@@ -14,7 +14,7 @@
 
 variable "region" {
   description = "Region to deploy forward proxy into"
-  default = "europe-west1"
+  default     = "europe-west1"
 }
 
 variable "project_id" {

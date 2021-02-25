@@ -29,7 +29,7 @@ module "instance-template" {
   startup_script       = file("${path.module}/files/metadata-startup.sh")
   subnetwork           = var.subnet_name
   subnetwork_project   = var.project_id
-  tags                 = var.target_tags
+  tags                 = var.tags
 
   depends_on = [module.service-account]
 }

@@ -44,7 +44,7 @@ Refer to the examples under [examples/](examples) directory.
 | source\_image\_family | Source image family for template | `string` | `"debian-10"` | no |
 | source\_image\_project | Source image project | `string` | `"debian-cloud"` | no |
 | subnet\_name | Subnet name | `string` | n/a | yes |
-| target\_tags | Target tags | `list(any)` | `[]` | no |
+| tags | Firewall tags | `list(any)` | `[]` | no |
 | template\_name | Name of template used by mig | `string` | `"forward-proxy"` | no |
 
 ## Outputs
