@@ -35,3 +35,7 @@ output "mig_instance_group_url" {
 output "mig_instance_zone" {
   value = data.google_compute_zones.available.names[0]
 }
+
+output "mig_name" {
+  value = format("%s-%s", var.mig_hostname, "mig")
+}
