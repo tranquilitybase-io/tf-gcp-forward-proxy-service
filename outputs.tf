@@ -33,5 +33,5 @@ output "mig_instance_group_url" {
 }
 
 output "mig_instance_zone" {
-  value = data.aws_availability_zones.available.names[0]
+  value = data.google_compute_zones.available.names[0]
 }

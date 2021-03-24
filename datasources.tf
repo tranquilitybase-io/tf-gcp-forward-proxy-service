@@ -1,3 +1,2 @@
-data "aws_availability_zones" "available" {
-  state = "available"
+data "google_compute_zones" "available" {
 }

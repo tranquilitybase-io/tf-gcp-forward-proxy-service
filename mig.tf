@@ -38,7 +38,7 @@ module "mig" {
   source  = "terraform-google-modules/vm/google//modules/mig"
   version = "6.0.0"
 
-  distribution_policy_zones = data.aws_availability_zones.available.names[0]
+  distribution_policy_zones = data.google_compute_zones.available.names[0]
   health_check              = var.health_check
   hostname                  = var.mig_hostname
   instance_template         = module.instance-template.self_link
