@@ -31,3 +31,7 @@ output "mig_instance_group_url" {
   description = "Url for mig instance group"
   value       = module.mig.instance_group
 }
+
+output "mig_instance_zone" {
+  value = data.aws_availability_zones.available.names[0]
+}
