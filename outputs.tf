@@ -39,3 +39,7 @@ output "mig_instance_zone" {
 output "mig_name" {
   value = format("%s-%s", var.mig_hostname, "mig")
 }
+
+output "forward_proxy_name" {
+  value = data.google_compute_instance_group.mig_instances.instances[0]
+}
