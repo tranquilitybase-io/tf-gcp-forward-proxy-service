@@ -55,6 +55,8 @@ resource "google_compute_instance" "default" {
   zone         = "europe-west1-b"
   project      = var.project_id
 
+  tags = ["allow-iap-ssh"]
+
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-10"
