@@ -53,6 +53,7 @@ resource "google_compute_instance" "default" {
   name         = "forward-proxy-instance"
   machine_type = "e2-medium"
   zone         = "europe-west1-b"
+  project      = var.project_id
 
   boot_disk {
     initialize_params {
