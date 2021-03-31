@@ -64,6 +64,7 @@ resource "google_compute_instance" "default" {
   network_interface {
     network = "tb-mgmt-network"
     subnetwork = "tb-mgmt-snet-europe-west1"
+    subnetwork_project = var.project_id
   }
 
   metadata_startup_script = file("${path.module}/files/metadata-startup.sh")
