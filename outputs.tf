@@ -41,5 +41,5 @@ output "mig_name" {
 }
 
 output "forward_proxy_name" {
-  value = "test" #tolist(data.google_compute_instance_group.mig_instances.instances)
+  value = data.google_compute_instance_group.mig_instances.instances
 }
