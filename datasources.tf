@@ -7,7 +7,7 @@ data "google_compute_zones" "available" {
 resource "time_sleep" "wait_120_seconds" {
   depends_on = [module.mig]
 
-  create_duration = "600s"
+  create_duration = "1s"
 }
 
 data "google_compute_instance_group" "mig_instances" {
