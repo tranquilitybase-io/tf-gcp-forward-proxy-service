@@ -83,7 +83,7 @@ resource "null_resource" "get_forward_proxy_instance_name" {
     always = timestamp()
   }
   provisioner "local-exec" {
-    command = "gcloud compute instances list --filter=\"name~'forward-proxy-*'\" --format=\"value(name)\" >> ${path.module}/forward_proxy_instance_name.txt"
+    command = "gcloud compute instances list --filter=\"name~'forward-proxy-*'\" --format=\"value(name)\" | tr -d '\n' >> ${path.module}/forward_proxy_instance_name.txt"
   }
   depends_on = [module.mig]
 }

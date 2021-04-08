@@ -42,5 +42,4 @@ output "mig_name" {
 
 output "forward_proxy_name" {
   value = data.local_file.get_forward_proxy_instance_name.content
-  type  = string
 }
