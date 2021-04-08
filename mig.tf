@@ -49,35 +49,6 @@ module "mig" {
   target_size               = var.node_count
 }
 
-//resource "google_compute_instance" "default" {
-//  name         = "forward-proxy-instance"
-//  machine_type = "e2-medium"
-//  zone         = "europe-west1-b"
-//  project      = var.project_id
-//
-//  tags = ["allow-iap-ssh"]
-//
-//  boot_disk {
-//    initialize_params {
-//      image = "debian-cloud/debian-10"
-//    }
-//  }
-//
-//  network_interface {
-//    network = "tb-mgmt-network"
-//    subnetwork = "tb-mgmt-snet-europe-west1"
-//    subnetwork_project = var.project_id
-//  }
-//
-//  metadata_startup_script = file("${path.module}/files/metadata-startup.sh")
-//
-//  service_account {
-//    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-//    email  = local.service_account_email
-//    scopes = ["cloud-platform"]
-//  }
-//}
-
 resource "null_resource" "get_forward_proxy_instance_name" {
   triggers = {
     always = timestamp()
