@@ -1,19 +1,3 @@
-# tf-gcp-forward-proxy-service
-
-## Module Overview
-
-Terraform module for creating a forward proxy on the Google Cloud Platform (GCP).
-
-It deploys the following resources into a given GCP project:
-
-- Instance Template
-- Managed Instance Group
-- Service Account (optional)
-- Service Account permissions
-
-## Usage
-Refer to the examples under [examples/](examples) directory.
-
 ## Requirements
 
 | Name | Version |
@@ -26,6 +10,9 @@ Refer to the examples under [examples/](examples) directory.
 | Name | Version |
 |------|---------|
 | google | <4.0,>= 2.12 |
+| local | n/a |
+| null | n/a |
+| time | n/a |
 
 ## Inputs
 
@@ -51,8 +38,11 @@ Refer to the examples under [examples/](examples) directory.
 
 | Name | Description |
 |------|-------------|
+| forward\_proxy\_name | Name of forward proxy instance |
 | instance\_template\_name | Instance template name |
 | instance\_template\_self\_link | Self link for instance template |
 | mig\_instance\_group\_url | Url for mig instance group |
+| mig\_instance\_zone | Zone for instances created inside of mig |
+| mig\_name | Name of mig |
 | mig\_self\_link | Self link for mig |
 

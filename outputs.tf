@@ -33,13 +33,16 @@ output "mig_instance_group_url" {
 }
 
 output "mig_instance_zone" {
+  description = "Zone for instances created inside of mig"
   value = data.google_compute_zones.available.names[0]
 }
 
 output "mig_name" {
+  description = "Name of mig"
   value = format("%s-%s", var.mig_hostname, "mig")
 }
 
 output "forward_proxy_name" {
+  description = "Name of forward proxy instance"
   value = data.local_file.get_forward_proxy_instance_name.content
 }
