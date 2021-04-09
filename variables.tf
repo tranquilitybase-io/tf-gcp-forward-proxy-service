@@ -65,7 +65,7 @@ variable "machine_type" {
 variable "network_name" {
   description = "Network self link"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "node_count" {
@@ -83,17 +83,19 @@ variable "preemptible" {
 variable "project_id" {
   description = "Project id"
   type        = string
+  value       = null
 }
 
 variable "region" {
   description = "Region"
   type        = string
+  value       = null
 }
 
 variable "service_account_name" {
   description = "Name of service account attached to forward proxy instance"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "source_image_family" {
@@ -111,6 +113,7 @@ variable "source_image_project" {
 variable "subnet_name" {
   description = "Subnet name"
   type        = string
+  value       = null
 }
 
 variable "template_name" {
