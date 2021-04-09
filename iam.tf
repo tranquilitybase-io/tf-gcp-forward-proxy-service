@@ -14,7 +14,7 @@
 
 module "service-account" {
   source = "terraform-google-modules/service-accounts/google"
-  count  = var.service_account_name != "" ? 0 : 1
+  count  = var.service_account_name == null ? 1 : 0
 
   names         = [local.sa_name]
   project_id    = var.project_id

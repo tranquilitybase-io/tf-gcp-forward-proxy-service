@@ -47,6 +47,7 @@ module "mig" {
   region                    = var.region
   subnetwork                = var.subnet_name
   target_size               = var.node_count
+
 }
 
 resource "null_resource" "get_forward_proxy_instance_name" {
@@ -76,5 +77,5 @@ data "local_file" "get_forward_proxy_instance_name" {
 
 data "local_file" "get_forward_proxy_instance_zone" {
   filename = "${path.module}/forward_proxy_instance_zone.txt"
-  depends_on = [null_resource.get_forward_proxy_instance_name]
+  depends_on = [null_resource.get_forward_proxy_instance_zone]
 }
