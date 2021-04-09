@@ -13,8 +13,9 @@
 # limitations under the License.
 
 locals {
-  sa_email_role_format   = format("%s:%s@%s.%s", "serviceAccount", local.sa_name, var.project_id, "iam.gserviceaccount.com")
-  sa_name                = var.service_account_name != "" ? var.service_account_name : "forwardproxy"
-  service_account_email  = format("%s@%s.%s", local.sa_name, var.project_id, "iam.gserviceaccount.com")
+  project_id             = var.project_id == null ? "" : var.project_id
+  sa_email_role_format   = format("%s:%s@%s.%s", "serviceAccount", local.sa_name, local.project_id, "iam.gserviceaccount.com")
+  sa_name                = var.service_account_name == null ? "forwardproxy" : var.service_account_name
+  service_account_email  = format("%s@%s.%s", local.sa_name, local.project_id, "iam.gserviceaccount.com")
   service_account_object = { email = local.service_account_email, scopes = ["cloud-platform"] }
 }
