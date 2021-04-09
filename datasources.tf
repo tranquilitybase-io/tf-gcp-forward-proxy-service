@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-data "google_compute_zones" "available" {
-  project = var.project_id
-  region  = var.region
-  status  = "UP"
-}
+//data "google_compute_zones" "available" {
+//  project = var.project_id
+//  region  = var.region
+//  status  = "UP"
+//}
 
 //resource "time_sleep" "wait_120_seconds" {
 //  depends_on = [module.mig]

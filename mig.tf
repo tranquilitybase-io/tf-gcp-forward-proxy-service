@@ -38,7 +38,7 @@ module "mig" {
   source  = "terraform-google-modules/vm/google//modules/mig"
   version = "6.0.0"
 
-  distribution_policy_zones = [data.google_compute_zones.available.names[0]]
+  //distribution_policy_zones = [data.google_compute_zones.available.names[0]]
   health_check              = var.health_check
   hostname                  = var.mig_hostname
   instance_template         = module.instance-template.self_link
@@ -59,7 +59,22 @@ resource "null_resource" "get_forward_proxy_instance_name" {
   depends_on = [module.mig]
 }
 
+resource "null_resource" "get_forward_proxy_instance_zone" {
+  triggers = {
+    always = timestamp()
+  }
+  provisioner "local-exec" {
+    command = "gcloud compute instances list --filter=\"name~'forward-proxy-*'\" --format=\"value(zone)\" | tr -d '\n' >> ${path.module}/forward_proxy_instance_zone.txt"
+  }
+  depends_on = [module.mig]
+}
+
 data "local_file" "get_forward_proxy_instance_name" {
   filename = "${path.module}/forward_proxy_instance_name.txt"
+  depends_on = [null_resource.get_forward_proxy_instance_name]
+}
+
+data "local_file" "get_forward_proxy_instance_zone" {
+  filename = "${path.module}/forward_proxy_instance_zone.txt"
   depends_on = [null_resource.get_forward_proxy_instance_name]
 }
