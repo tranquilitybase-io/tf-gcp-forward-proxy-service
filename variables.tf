@@ -65,7 +65,6 @@ variable "machine_type" {
 variable "network_name" {
   description = "Network self link"
   type        = string
-  default     = null
 }
 
 variable "node_count" {
@@ -83,13 +82,11 @@ variable "preemptible" {
 variable "project_id" {
   description = "Project id"
   type        = string
-  value       = null
 }
 
 variable "region" {
   description = "Region"
   type        = string
-  value       = null
 }
 
 variable "service_account_name" {
@@ -113,7 +110,6 @@ variable "source_image_project" {
 variable "subnet_name" {
   description = "Subnet name"
   type        = string
-  value       = null
 }
 
 variable "template_name" {
