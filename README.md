@@ -26,9 +26,6 @@ Refer to the examples under [examples/](examples) directory.
 | Name | Version |
 |------|---------|
 | google | <4.0,>= 2.12 |
-| local | n/a |
-| null | n/a |
-| time | n/a |
 
 ## Inputs
 
