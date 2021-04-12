@@ -32,11 +32,6 @@ output "mig_instance_group_url" {
   value       = module.mig.instance_group
 }
 
-//output "mig_instance_zone" {
-//  description = "Zone for instances created inside of mig"
-//  value = data.google_compute_zones.available.names[0]
-//}
-
 output "mig_name" {
   description = "Name of mig"
   value = format("%s-%s", var.mig_hostname, "mig")
