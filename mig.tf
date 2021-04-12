@@ -38,15 +38,14 @@ module "mig" {
   source  = "terraform-google-modules/vm/google//modules/mig"
   version = "6.0.0"
 
-  //distribution_policy_zones = [data.google_compute_zones.available.names[0]]
-  health_check              = var.health_check
-  hostname                  = var.mig_hostname
-  instance_template         = module.instance-template.self_link
-  network                   = var.network_name
-  project_id                = var.project_id
-  region                    = var.region
-  subnetwork                = var.subnet_name
-  target_size               = var.node_count
+  health_check      = var.health_check
+  hostname          = var.mig_hostname
+  instance_template = module.instance-template.self_link
+  network           = var.network_name
+  project_id        = var.project_id
+  region            = var.region
+  subnetwork        = var.subnet_name
+  target_size       = var.node_count
 
 }
 
