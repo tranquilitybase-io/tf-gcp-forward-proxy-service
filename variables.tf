@@ -65,7 +65,6 @@ variable "machine_type" {
 variable "network_name" {
   description = "Network self link"
   type        = string
-  default     = ""
 }
 
 variable "node_count" {
@@ -93,7 +92,7 @@ variable "region" {
 variable "service_account_name" {
   description = "Name of service account attached to forward proxy instance"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "source_image_family" {

@@ -46,4 +46,35 @@ module "mig" {
   region            = var.region
   subnetwork        = var.subnet_name
   target_size       = var.node_count
+
+}
+
+resource "null_resource" "get_forward_proxy_instance_name" {
+  triggers = {
+    always = timestamp()
+  }
+  provisioner "local-exec" {
+    command = "gcloud compute instances list --filter=\"name~'forward-proxy-*'\" --format=\"value(name)\" | tr -d '\n' >> ${path.module}/forward_proxy_instance_name.txt"
+  }
+  depends_on = [module.mig]
+}
+
+resource "null_resource" "get_forward_proxy_instance_zone" {
+  triggers = {
+    always = timestamp()
+  }
+  provisioner "local-exec" {
+    command = "gcloud compute instances list --filter=\"name~'forward-proxy-*'\" --format=\"value(zone)\" | tr -d '\n' >> ${path.module}/forward_proxy_instance_zone.txt"
+  }
+  depends_on = [module.mig]
+}
+
+data "local_file" "get_forward_proxy_instance_name" {
+  filename = "${path.module}/forward_proxy_instance_name.txt"
+  depends_on = [null_resource.get_forward_proxy_instance_name]
+}
+
+data "local_file" "get_forward_proxy_instance_zone" {
+  filename = "${path.module}/forward_proxy_instance_zone.txt"
+  depends_on = [null_resource.get_forward_proxy_instance_zone]
 }

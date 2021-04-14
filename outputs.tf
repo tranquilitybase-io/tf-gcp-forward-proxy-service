@@ -31,3 +31,18 @@ output "mig_instance_group_url" {
   description = "Url for mig instance group"
   value       = module.mig.instance_group
 }
+
+output "mig_name" {
+  description = "Name of mig"
+  value = format("%s-%s", var.mig_hostname, "mig")
+}
+
+output "forward_proxy_name" {
+  description = "Name of forward proxy instance"
+  value = data.local_file.get_forward_proxy_instance_name.content
+}
+
+output "forward_proxy_zone" {
+  description = "Name of forward proxy instance"
+  value = data.local_file.get_forward_proxy_instance_zone.content
+}
