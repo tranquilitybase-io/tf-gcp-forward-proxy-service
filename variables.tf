@@ -98,7 +98,7 @@ variable "service_account_name" {
 variable "source_image_family" {
   description = "Source image family for template"
   type        = string
-  default     = "debian-9"
+  default     = "debian-10"
 }
 
 variable "source_image_project" {
